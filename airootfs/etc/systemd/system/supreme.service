@@ -1,0 +1,16 @@
+[Unit]
+Description=Supreme OS Omni-Logic Startup
+After=graphics.target network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/supreme_core
+ExecStart=/usr/bin/python main.py
+Restart=always
+Environment=DISPLAY=:0
+Environment=XDG_RUNTIME_DIR=/run/user/0
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
